@@ -35,12 +35,8 @@ class WeatherViewModel(val initialImperial: Boolean) : ViewModel() {
     }
 
     fun updateCity(city: GeoApi.City, weather: WeatherApi?) = viewModelScope.launch {
-        var currentWeather = fetchApiData(city)
-
-        if (currentWeather == null) {
-            currentWeather = weather
-        }
-
+        weather?.let { weatherLiveData.postValue(it) }
+        val currentWeather = fetchApiData(city)
         currentWeather?.let { weatherLiveData.postValue(it) }
     }
 
