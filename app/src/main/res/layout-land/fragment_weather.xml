@@ -17,9 +17,10 @@
         android:gravity="center"
         android:text="@string/no_value"
         app:layout_constraintBottom_toTopOf="@id/weather_icon_web_view"
-        app:layout_constraintEnd_toStartOf="@id/weather_wind_speed_icon_web_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".5" />
 
     <com.app.weather.view.SimpleWebView
         android:id="@+id/weather_icon_web_view"
@@ -29,7 +30,7 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/weather_temperature_text_view"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent=".3"
+        app:layout_constraintHeight_percent=".2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/weather_city_text_view" />
 
@@ -42,7 +43,8 @@
         android:gravity="center"
         android:text="@string/no_value"
         app:layout_constraintBottom_toTopOf="@id/weather_description_text_view"
-        app:layout_constraintEnd_toStartOf="@id/weather_wind_speed_icon_web_view"
+        app:layout_constraintEnd_toEndOf="@id/weather_city_text_view"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/weather_icon_web_view"
         app:layout_constraintTop_toBottomOf="@id/weather_city_text_view" />
 
@@ -55,7 +57,7 @@
         android:gravity="center"
         android:text="@string/no_value"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/weather_wind_speed_icon_web_view"
+        app:layout_constraintEnd_toEndOf="@id/weather_city_text_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/weather_icon_web_view" />
 
@@ -67,7 +69,7 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/weather_wind_speed_text_view"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintHeight_percent=".15"
         app:layout_constraintStart_toEndOf="@id/weather_temperature_text_view"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -94,7 +96,7 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/weather_pressure_text_view"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintHeight_percent=".15"
         app:layout_constraintStart_toEndOf="@id/weather_temperature_text_view"
         app:layout_constraintTop_toBottomOf="@id/weather_wind_speed_icon_web_view" />
 
@@ -121,7 +123,7 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/weather_humidity_text_view"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintHeight_percent=".15"
         app:layout_constraintStart_toEndOf="@id/weather_temperature_text_view"
         app:layout_constraintTop_toBottomOf="@id/weather_pressure_icon_web_view" />
 
@@ -148,7 +150,7 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/weather_feels_like_text_view"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintHeight_percent=".15"
         app:layout_constraintStart_toEndOf="@id/weather_temperature_text_view"
         app:layout_constraintTop_toBottomOf="@id/weather_humidity_icon_web_view" />
 
