@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_forecast"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:paddingHorizontal="25dp">
+
+    <com.app.weather.view.SimpleWebView
+        android:id="@+id/item_forecast_icon_web_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/item_forecast_temperature_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".2" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/item_forecast_temperature_text_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="start|center_vertical"
+        android:scaleX=".8"
+        android:scaleY=".8"
+        android:text="@string/no_value"
+        app:layout_constraintBottom_toBottomOf="@id/item_forecast_icon_web_view"
+        app:layout_constraintEnd_toStartOf="@id/item_forecast_datetime_text_view"
+        app:layout_constraintStart_toEndOf="@id/item_forecast_icon_web_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/item_forecast_datetime_text_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="end|center_vertical"
+        android:scaleX=".8"
+        android:scaleY=".8"
+        android:text="@string/no_value"
+        app:layout_constraintBottom_toBottomOf="@id/item_forecast_icon_web_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_forecast_temperature_text_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".5" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_forecast_icon_web_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

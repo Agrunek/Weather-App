@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <string name="no_value">--</string>
+    <string name="measurement_system_switch_label">°C / °F</string>
+</resources>
