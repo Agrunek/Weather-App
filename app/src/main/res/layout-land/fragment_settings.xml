@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="25dp"
+    android:paddingVertical="25dp"
+    tools:context=".fragment.SettingsFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_measurement_switch_label"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="start|center_vertical"
+        android:scaleX=".8"
+        android:scaleY=".8"
+        android:text="@string/measurement_system_switch_label"
+        app:layout_constraintBottom_toBottomOf="@id/settings_measurement_switch"
+        app:layout_constraintEnd_toStartOf="@id/settings_measurement_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/settings_measurement_switch" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/settings_measurement_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/settings_scrollview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:scrollbars="vertical"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_measurement_switch_label" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/settings_dialog_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/no_value"
+        android:src="@drawable/ic_edit_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

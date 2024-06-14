@@ -1,6 +1,7 @@
 package com.app.weather
 
 import android.content.Context
+import android.content.res.Configuration.ORIENTATION_PORTRAIT
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -65,17 +66,19 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Weather updated!", Toast.LENGTH_SHORT).show()
         }
 
-        val carousel: ViewPager2 = findViewById(R.id.main_carousel)
-        val fragments = listOf(WeatherFragment(), ForecastFragment(), SettingsFragment())
+        if (resources.configuration.orientation == ORIENTATION_PORTRAIT) {
+            val carousel: ViewPager2 = findViewById(R.id.main_carousel)
+            val fragments = listOf(WeatherFragment(), ForecastFragment(), SettingsFragment())
 
-        carousel.setPageTransformer(ZoomOutPageTransformer())
-        carousel.adapter = object : FragmentStateAdapter(this) {
-            override fun getItemCount(): Int = fragments.size
-            override fun createFragment(position: Int): Fragment = fragments[position]
+            carousel.setPageTransformer(ZoomOutPageTransformer())
+            carousel.adapter = object : FragmentStateAdapter(this) {
+                override fun getItemCount(): Int = fragments.size
+                override fun createFragment(position: Int): Fragment = fragments[position]
+            }
+
+            val carouselDots: TabLayout = findViewById(R.id.main_carousel_dots)
+            TabLayoutMediator(carouselDots, carousel) { _, _ -> }.attach()
         }
-
-        val carouselDots: TabLayout = findViewById(R.id.main_carousel_dots)
-        TabLayoutMediator(carouselDots, carousel) { _, _ -> }.attach()
     }
 
     private fun retrieveImperialSynchronously(): Boolean = runBlocking {

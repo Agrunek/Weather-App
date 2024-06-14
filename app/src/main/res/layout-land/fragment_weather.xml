@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/weather"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    tools:context=".fragment.WeatherFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/weather_city_text_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/no_value"
+        app:layout_constraintBottom_toTopOf="@id/weather_icon_web_view"
+        app:layout_constraintEnd_toStartOf="@id/weather_wind_speed_icon_web_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.app.weather.view.SimpleWebView
+        android:id="@+id/weather_icon_web_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/weather_description_text_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/weather_temperature_text_view"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weather_city_text_view" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/weather_temperature_text_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/no_value"
+        app:layout_constraintBottom_toTopOf="@id/weather_description_text_view"
+        app:layout_constraintEnd_toStartOf="@id/weather_wind_speed_icon_web_view"
+        app:layout_constraintStart_toEndOf="@id/weather_icon_web_view"
+        app:layout_constraintTop_toBottomOf="@id/weather_city_text_view" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/weather_description_text_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/no_value"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/weather_wind_speed_icon_web_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weather_icon_web_view" />
+
+    <com.app.weather.view.SimpleWebView
+        android:id="@+id/weather_wind_speed_icon_web_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/weather_pressure_icon_web_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/weather_wind_speed_text_view"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintStart_toEndOf="@id/weather_temperature_text_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/weather_wind_speed_text_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
+        android:scaleX=".8"
+        android:scaleY=".8"
+        android:text="@string/no_value"
+        app:layout_constraintBottom_toBottomOf="@id/weather_wind_speed_icon_web_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/weather_wind_speed_icon_web_view"
+        app:layout_constraintTop_toTopOf="@id/weather_wind_speed_icon_web_view" />
+
+    <com.app.weather.view.SimpleWebView
+        android:id="@+id/weather_pressure_icon_web_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/weather_humidity_icon_web_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/weather_pressure_text_view"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintStart_toEndOf="@id/weather_temperature_text_view"
+        app:layout_constraintTop_toBottomOf="@id/weather_wind_speed_icon_web_view" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/weather_pressure_text_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
+        android:scaleX=".8"
+        android:scaleY=".8"
+        android:text="@string/no_value"
+        app:layout_constraintBottom_toBottomOf="@id/weather_pressure_icon_web_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/weather_pressure_icon_web_view"
+        app:layout_constraintTop_toTopOf="@id/weather_pressure_icon_web_view" />
+
+    <com.app.weather.view.SimpleWebView
+        android:id="@+id/weather_humidity_icon_web_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/weather_feels_like_icon_web_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/weather_humidity_text_view"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintStart_toEndOf="@id/weather_temperature_text_view"
+        app:layout_constraintTop_toBottomOf="@id/weather_pressure_icon_web_view" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/weather_humidity_text_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
+        android:scaleX=".8"
+        android:scaleY=".8"
+        android:text="@string/no_value"
+        app:layout_constraintBottom_toBottomOf="@id/weather_humidity_icon_web_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/weather_humidity_icon_web_view"
+        app:layout_constraintTop_toTopOf="@id/weather_humidity_icon_web_view" />
+
+    <com.app.weather.view.SimpleWebView
+        android:id="@+id/weather_feels_like_icon_web_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/weather_feels_like_text_view"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintStart_toEndOf="@id/weather_temperature_text_view"
+        app:layout_constraintTop_toBottomOf="@id/weather_humidity_icon_web_view" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/weather_feels_like_text_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
+        android:scaleX=".8"
+        android:scaleY=".8"
+        android:text="@string/no_value"
+        app:layout_constraintBottom_toBottomOf="@id/weather_feels_like_icon_web_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/weather_feels_like_icon_web_view"
+        app:layout_constraintTop_toTopOf="@id/weather_feels_like_icon_web_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
